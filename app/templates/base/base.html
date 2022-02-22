@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% from "base/_menu.html" import show_menu %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{ url_for('static',filename='css/bootstrap/bootstrap.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static',filename='js/bootstrap/bootstrap.min.js') }}"></script>
+    <title>{% block titulo %}{% endblock %}</title>
+</head>
+<body>
+<header>
+    {{ show_menu(current_user) }}
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        {% block contenido %}
+    </main>
+{% endblock %}
+<footer class="border-top footer text-muted">
+    <div class="container">
+        Puesta en Producción Segura-IES Ginés Perez Chirinos
+    </div>
+</footer>
+</div>
+</body>
+</html>

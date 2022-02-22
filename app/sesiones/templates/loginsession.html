@@ -1,0 +1,23 @@
+{% from 'base/_helpers.html' import generarForm with context %}
+{% extends "base/base.html" %}
+{% block titulo %}Login{% endblock %}
+{% block contenido %}
+<h1>Login</h1>
+    {% if error %}
+        <div class="row">
+            <div class="alert alert-danger" role="alert">
+              {{ error }}
+            </div>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-sm-4">
+            <form action="{{ url_for('sesiones.loginsession') }}" method="post">
+                {{ form.csrf_token() }}
+                {{ generarForm(form) }}
+
+                <input type="submit" value="Iniciar Sesión" class="btn btn-primary"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}

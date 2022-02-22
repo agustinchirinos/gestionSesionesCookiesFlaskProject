@@ -1,0 +1,16 @@
+{% extends "base/base.html" %}
+{% block titulo %}XSS Reflejado 1{% endblock %}
+{% block contenido %}
+<h1>XSS Reflejado 1</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <form action="{{ url_for('sesiones.xssreflejado') }}" method="post">
+                <div class="mb-3 mt-3">
+                    <label class="form-label">Comentario:</label>
+                    <textarea name="comentario" class="form-control" type="text"></textarea>
+                </div>
+                <input type="submit" value="Enviar" class="btn btn-primary"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}
