@@ -6,5 +6,8 @@
     Nombre:{{ nombre }}
     <br/>
     Apellidos:{{ apellidos }}
+        <form action="{{ url_for('sesiones.mostrarsession') }}" method="post">
+        <input type="submit" value="Borrar" class="bg-danger">
+    </form>
 </div>
 {% endblock %}

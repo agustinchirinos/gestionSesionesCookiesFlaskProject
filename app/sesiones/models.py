@@ -8,7 +8,6 @@ class Usuario(db.Model,UserMixin):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(20), unique=True,nullable=False)
     password = db.Column(db.String())
-    passwordcifrada = db.Column(db.LargeBinary)
     dni = db.Column(db.String(10),nullable=False,unique=True)
     nombre = db.Column(db.String(20),nullable=False)
     apellidos = db.Column(db.String(50),nullable=False)

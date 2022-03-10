@@ -2,5 +2,5 @@ Flask
 Flask-WTF
 Flask-Migrate
 Flask-SQLAlchemy
-psycopg2
+psycopg2-binary
 Flask-Login
