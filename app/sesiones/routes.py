@@ -1,7 +1,7 @@
 import base64
 
 from flask import render_template, request, redirect, url_for, make_response, session
-from flask_login import login_user, logout_user, current_user
+from flask_login import login_user, logout_user, current_user, login_required
 
 import app
 from . import sesiones
@@ -96,9 +96,10 @@ def xssreflejado():
     return render_template("xssreflejado.html")
 
 @sesiones.route('/welcome/')
+@login_required
 def welcome():  # put application's code here
-    if not current_user.is_authenticated:
-        return redirect(url_for('sesiones.loginsession'))
+    # if not current_user.is_authenticated:
+    #     return redirect(url_for('sesiones.loginsession'))
     return render_template('welcome.html')
 
 @sesiones.route('/')

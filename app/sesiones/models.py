@@ -11,6 +11,7 @@ class Usuario(db.Model,UserMixin):
     dni = db.Column(db.String(10),nullable=False,unique=True)
     nombre = db.Column(db.String(20),nullable=False)
     apellidos = db.Column(db.String(50),nullable=False)
+    is_admin = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
         return f'<Usuario {self.apellidos}, {self.nombre}>'

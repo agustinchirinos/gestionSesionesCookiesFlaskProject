@@ -13,9 +13,12 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login_manager = LoginManager(app)
 
+login_manager.login_view = "sesiones.loginsession"
 
 from .sesiones import sesiones
+from .admin import admin
 
 def create_app():
     app.register_blueprint(sesiones)
+    app.register_blueprint(admin)
     return  app
